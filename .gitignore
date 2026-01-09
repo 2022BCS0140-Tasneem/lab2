@@ -1,0 +1,4 @@
+output/model/*
+output/results/*
+!output/model/.gitkeep
+!output/results/.gitkeep
