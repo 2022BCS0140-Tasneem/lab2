@@ -29,3 +29,9 @@ joblib.dump(model, "output/model/model.pkl")
 json.dump(metrics, open("output/results/metrics.json", "w"), indent=4)
 
 print(metrics)
+model = RandomForestRegressor(
+    n_estimators=100,
+    max_features="sqrt",
+    random_state=42
+)
+
