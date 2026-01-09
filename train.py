@@ -2,7 +2,7 @@ import pandas as pd
 import json, os, joblib
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from sklearn.linear_model import Lasso
+from sklearn.linear_model import Ridge
 from sklearn.metrics import mean_squared_error, r2_score
 
 os.makedirs("output/model", exist_ok=True)
@@ -19,7 +19,7 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42
 )
 
-model = Lasso(alpha=0.01)
+model = Ridge(alpha=1.0)
 model.fit(X_train, y_train)
 
 y_pred = model.predict(X_test)
